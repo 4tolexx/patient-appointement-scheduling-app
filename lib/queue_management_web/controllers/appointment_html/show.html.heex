@@ -1,0 +1,18 @@
+<.header>
+  Appointment {@appointment.id}
+  <:subtitle>This is a appointment record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/appointments/#{@appointment}/edit"}>
+      <.button>Edit appointment</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Start at">{@appointment.start_at}</:item>
+  <:item title="End at">{@appointment.end_at}</:item>
+  <:item title="Notes">{@appointment.notes}</:item>
+  <:item title="Status">{@appointment.status}</:item>
+</.list>
+
+<.back navigate={~p"/appointments"}>Back to appointments</.back>
