@@ -1,4 +1,4 @@
-defmodule QueueManagement.Repo.Migrations.DropProfileTable do
+defmodule MediSync.Repo.Migrations.DropProfileTable do
   use Ecto.Migration
 
   def change do

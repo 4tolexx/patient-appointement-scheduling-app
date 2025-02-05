@@ -1,7 +1,7 @@
-defmodule QueueManagement.SchedulingFixtures do
+defmodule MediSync.SchedulingFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `QueueManagement.Scheduling` context.
+  entities via the `MediSync.Scheduling` context.
   """
 
   @doc """
@@ -16,7 +16,7 @@ defmodule QueueManagement.SchedulingFixtures do
         start_at: ~U[2025-02-04 14:52:00Z],
         status: "some status"
       })
-      |> QueueManagement.Scheduling.create_appointment()
+      |> MediSync.Scheduling.create_appointment()
 
     appointment
   end

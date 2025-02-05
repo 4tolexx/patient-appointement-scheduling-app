@@ -1,4 +1,4 @@
-defmodule QueueManagement.Repo.Migrations.AddOauthUser do
+defmodule MediSync.Repo.Migrations.AddOauthUser do
   use Ecto.Migration
 
   def up do

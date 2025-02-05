@@ -1,4 +1,4 @@
-defmodule QueueManagement.Repo.Migrations.RemoveProfileFieldsFromUsers do
+defmodule MediSync.Repo.Migrations.RemoveProfileFieldsFromUsers do
   use Ecto.Migration
 
   def change do

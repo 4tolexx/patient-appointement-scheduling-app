@@ -8,8 +8,8 @@ const path = require("path")
 module.exports = {
   content: [
     "./js/**/*.js",
-    "../lib/queue_management_web.ex",
-    "../lib/queue_management_web/**/*.*ex"
+    "../lib/medi_sync_web.ex",
+    "../lib/medi_sync_web/**/*.*ex"
   ],
   theme: {
     extend: {

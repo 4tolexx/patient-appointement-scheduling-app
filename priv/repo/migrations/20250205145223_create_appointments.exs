@@ -1,4 +1,4 @@
-defmodule QueueManagement.Repo.Migrations.CreateAppointments do
+defmodule MediSync.Repo.Migrations.CreateAppointments do
   use Ecto.Migration
 
   def change do

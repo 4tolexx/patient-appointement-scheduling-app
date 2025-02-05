@@ -1,11 +1,11 @@
 import Config
 
 # Configure your database
-config :queue_management, QueueManagement.Repo,
+config :medi_sync, MediSync.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "queue_management_dev",
+  database: "medi_sync_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -16,7 +16,7 @@ config :queue_management, QueueManagement.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :queue_management, QueueManagementWeb.Endpoint,
+config :medi_sync, MediSyncWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
@@ -25,8 +25,8 @@ config :queue_management, QueueManagementWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "LT7qVPUtbgg21ga9ssWXnlPkh3nAnxWlLFbdga7f5/fHycPPmyfu6MgJO+6xg96s",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:queue_management, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:queue_management, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:medi_sync, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:medi_sync, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -53,17 +53,17 @@ config :queue_management, QueueManagementWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :queue_management, QueueManagementWeb.Endpoint,
+config :medi_sync, MediSyncWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/queue_management_web/(controllers|live|components)/.*(ex|heex)$"
+      ~r"lib/medi_sync_web/(controllers|live|components)/.*(ex|heex)$"
     ]
   ]
 
 # Enable dev routes for dashboard and mailbox
-config :queue_management, dev_routes: true
+config :medi_sync, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

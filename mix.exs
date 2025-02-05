@@ -1,9 +1,9 @@
-defmodule QueueManagement.MixProject do
+defmodule MediSync.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :queue_management,
+      app: :medi_sync,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule QueueManagement.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {QueueManagement.Application, []},
+      mod: {MediSync.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -78,10 +78,10 @@ defmodule QueueManagement.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind queue_management", "esbuild queue_management"],
+      "assets.build": ["tailwind medi_sync", "esbuild medi_sync"],
       "assets.deploy": [
-        "tailwind queue_management --minify",
-        "esbuild queue_management --minify",
+        "tailwind medi_sync --minify",
+        "esbuild medi_sync --minify",
         "phx.digest"
       ]
     ]

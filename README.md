@@ -1,4 +1,4 @@
-# QueueManagement
+# MediSync
 
 To start your Phoenix server:
 

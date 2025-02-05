@@ -1,7 +1,7 @@
-defmodule QueueManagement.AccountsFixtures do
+defmodule MediSync.AccountsFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `QueueManagement.Accounts` context.
+  entities via the `MediSync.Accounts` context.
   """
 
   def unique_user_email, do: "user#{System.unique_integer()}@example.com"
@@ -18,7 +18,7 @@ defmodule QueueManagement.AccountsFixtures do
     {:ok, user} =
       attrs
       |> valid_user_attributes()
-      |> QueueManagement.Accounts.register_user()
+      |> MediSync.Accounts.register_user()
 
     user
   end

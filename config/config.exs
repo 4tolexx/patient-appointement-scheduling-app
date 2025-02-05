@@ -15,19 +15,19 @@ if config_env() in [:dev, :test] do
   end
 end
 
-config :queue_management,
-  ecto_repos: [QueueManagement.Repo],
+config :medi_sync,
+  ecto_repos: [MediSync.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
-config :queue_management, QueueManagementWeb.Endpoint,
+config :medi_sync, MediSyncWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
-    formats: [html: QueueManagementWeb.ErrorHTML, json: QueueManagementWeb.ErrorJSON],
+    formats: [html: MediSyncWeb.ErrorHTML, json: MediSyncWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: QueueManagement.PubSub,
+  pubsub_server: MediSync.PubSub,
   live_view: [signing_salt: "UjQnFdoc"]
 
 # Configures the mailer
@@ -37,12 +37,12 @@ config :queue_management, QueueManagementWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :queue_management, QueueManagement.Mailer, adapter: Swoosh.Adapters.Local
+config :medi_sync, MediSync.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.17.11",
-  queue_management: [
+  medi_sync: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
@@ -52,7 +52,7 @@ config :esbuild,
 # Configure tailwind (the version is required)
 config :tailwind,
   version: "3.4.3",
-  queue_management: [
+  medi_sync: [
     args: ~w(
       --config=tailwind.config.js
       --input=css/app.css
